@@ -1,0 +1,37 @@
+#mainCanvas {
+    margin: 20px;
+    margin-left: 0px;
+    border: 2px;
+    border-color: black;
+    border-style: solid;
+    stroke: black;
+    border-radius: 5px;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.color-btn {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+#red {
+    background-color: red;
+}
+
+#blue {
+    background-color: blue;
+}
+
+#green {
+    background-color: green;
+}
+
+#black {
+    background-color: black;
+}
