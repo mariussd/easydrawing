@@ -13,7 +13,8 @@ let eventTimer = 0;
 
 let timeoutId = 0;
 
-const canvas = document.getElementById("mainCanvas");
+let canvas = document.getElementById("mainCanvas");
+let canvasCoordinates = canvas.getBoundingClientRect();
 let ctx = canvas.getContext("2d");
 
 blueButton.addEventListener("click", () => {
@@ -30,8 +31,8 @@ blackButton.addEventListener("click", () => {
 });
 
 canvas.addEventListener("mousedown", event => {
-    mouseX = event.pageX;
-    mouseY = event.pageY;
+    mouseX = event.pageX - canvasCoordinates.x;
+    mouseY = event.pageY - canvasCoordinates.y;
     eventTimer = -1;
     if (eventTimer === -1) {
         placeCircle(mouseX, mouseY);
@@ -39,8 +40,8 @@ canvas.addEventListener("mousedown", event => {
 });
 
 canvas.addEventListener("mousemove", event => {
-    mouseX = event.pageX;
-    mouseY = event.pageY;
+    mouseX = event.pageX - canvasCoordinates.x;
+    mouseY = event.pageY - canvasCoordinates.y;
 });
 
 canvas.addEventListener("mouseup", () => {
